@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Error</title>
+</head>
+<body>
+    <h1>404 - Page Not Found</h1>
+    <h2>Not correct action value: {{ action_value }}</h2>
+    <p>Available only:</p>
+    <table>
+        {% for key in available %}
+        <tr>
+            <th>{{ key }}</th>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
