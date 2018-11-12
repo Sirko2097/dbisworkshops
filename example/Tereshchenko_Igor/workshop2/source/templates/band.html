@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Band</title>
+</head>
+<body>
+    <form action="/api" method="post" id="form_band">
+        <div>
+            <label>Input Name:
+                <input type="text" name="band_name" value="{{ band.get('band_name') }}"/>
+            </label>
+        </div>
+        <div>
+            <label>Input Music Label:
+                <input type="text" name="label" value="{{ band.get('music_label') }}"/>
+            </label>
+        </div><button type="submit" form="form_band" name="action" value="band_update">Submit</button>
+    </form>
+</body>
+</html>
