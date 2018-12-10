@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Reg</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body class="container">
+<div class="jumbotron">
+    <form action="/radio/signUp" method="post">
+        {{ myForm.hidden_tag() }}
+        {{ myForm.login.label }}{{ myForm.login }}
+        <br>
+        {{ myForm.password.label }}{{ myForm.password }}
+        <br>
+        {{ myForm.name.label }}{{ myForm.name }}
+        <br>
+        {{ myForm.email.label }}{{ myForm.email }}
+        <br>
+        {{ myForm.submit }}
+        <br>
+    </form>
+</div>
+
+</body>
+</html>
