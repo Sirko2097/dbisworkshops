@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Song</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body class="container">
+<div class="jumbotron">
+    <h3 align="center">Add Song</h3>
+    <form action="/radio/addsong" method="POST">
+        {{ myForm.hidden_tag() }}
+
+        {{ myForm.name.label }}{{ myForm.name }}
+        <br>
+        {{ myForm.duration.label }}{{ myForm.duration }}
+        <br>
+        {{ myForm.band.label }}{{ myForm.band }}
+        <br>
+        {{ myForm.genre.label }}{{ myForm.genre }}
+        <br>
+        {{ myForm.submit }}
+        <button type="reset">Cancel</button>
+        <br>
+    </form>
+</div>
+<div class="footer">
+    <div class="btn-group btn-group-justified">
+        <div class="btn-group">
+            <input type="button" value="Back to Main Menu" class="btn btn-primary" onclick="location.href='/'"/>
+        </div>
+        <div class="btn-group">
+            <input type="button" value="All Songs" class="btn btn-primary"
+                   onclick="location.href='/radio/allSongs'"/>
+        </div>
+        <div class="btn-group">
+            <input type="button" value="Log Off" class="btn btn-danger" onclick="location.href='/radio/signOut'"/>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Band</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body class="container">
+    <form action="/radio" method="post" id="form_band">
+        <div class="form-group">
+            <label>Input Name:
+                <input type="text" name="band_name" value="{{ song.get('band_name') }}"/>
+            </label>
+        </div>
+        <div class="form-group">
+            <label>Input Music Label:
+                <input type="text" name="label" value="{{ song.get('music_label') }}"/>
+            </label>
+        </div>
+        <button type="submit" form="form_band" name="action" value="band_update">Submit</button>
+    </form>
+</body>
+</html>

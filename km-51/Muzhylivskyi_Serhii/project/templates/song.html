@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Song</title>
+</head>
+<body>
+    <form action="/radio" method="post" id="form_song">
+        <label>Input Song Name:
+            <input type="text" name="song_name" value="{{ song.get('song_name') }}"/>
+        </label>
+        <label>Input duration:
+            <input type="text" name="duration" value="{{ song.get('duration') }}"/>
+        </label>
+        <label>Input Band:
+            <input type="text" name="band" value="{{ song.get('band') }}"/>
+        </label>
+        <button type="submit" form="form_song" name="action" value="song_update">Submit</button>
+    </form>
+</body>
+</html>
