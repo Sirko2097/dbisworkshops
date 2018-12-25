@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Graph</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="header">
+    <h2>
+        Plotly
+    </h2>
+</div>
+
+<div id="bar" class="bar">
+</div>
+
+
+</body>
+<div class="footer">
+    <div class="btn-group btn-group-justified">
+        <div class="btn-group">
+            <input type="button" value="Back to Main Menu" class="btn btn-primary" onclick="location.href='/'"/>
+        </div>
+        <div class="btn-group">
+            <input type="button" value="Log Off" class="btn btn-danger" onclick="location.href='/radio/signOut'"/>
+        </div>
+    </div>
+</div>
+<footer>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <!-- Plotly.js -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+    <script type="text/javascript">
+        var graph = {{graphJSONbar | safe}};
+        Plotly.plot('bar', graph, {})
+    </script>
+</footer>
+</html>

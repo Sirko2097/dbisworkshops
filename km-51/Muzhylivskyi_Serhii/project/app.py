@@ -1,5 +1,8 @@
 import datetime
+import json
 
+import plotly
+import plotly.graph_objs as go
 import cx_Oracle
 from flask import Flask, render_template, request, redirect, url_for, make_response, session
 
@@ -365,6 +368,27 @@ def addSongToPlayList():
             return redirect('/radio/playlist')
         else:
             return render_template("error.html")
+
+
+@app.route('/radio/bar', methods=['GET', 'POST'])
+def plotBar():
+    songs = Song().__enter__().get_songs()
+    genres = set([song[4] for song in songs])
+    frequency = {genre: len(list(filter(lambda song: song[4] == genre, songs))) for genre in genres}
+
+    x, y = [], []
+    for key, item in frequency.items():
+        x.append(key)
+        y.append(item)
+
+    bar = go.Bar(
+        x=x,
+        y=y
+    )
+    data = [bar]
+    graphJSONbar = json.dumps(data, cls=plotly.utils.PlotlyJSONEncoder)
+
+    return render_template('graph.html', graphJSONbar=graphJSONbar)
 
 
 if __name__ == '__main__':
